@@ -12,12 +12,12 @@ const trackmanURL = "https://trackman-fm.apps.wuvt.vt.edu/api"
 const djLinkURL = "https://www.wuvt.vt.edu/playlists/dj/%d"
 
 type TrackmanLatestTrackResponse struct {
-	Album string `json:"album"`
+	Album  string `json:"album"`
 	Artist string `json:"artist"`
-	DJ string `json:"dj"`
-	DJID int `json:"dj_id"`
-	Label string `json:"label"`
-	Title string `json:"title"`
+	DJ     string `json:"dj"`
+	DJID   int    `json:"dj_id"`
+	Label  string `json:"label"`
+	Title  string `json:"title"`
 }
 
 func wuvtHandler(w http.ResponseWriter, r *http.Request) {
