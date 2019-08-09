@@ -26,7 +26,7 @@ func isItYi() string {
 	}
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func yiHandler(w http.ResponseWriter, r *http.Request) {
 	output, err := json.Marshal(SlackWebhookResponse{
 		ResponseType: "in_channel",
 		Text:         isItYi(),
@@ -41,6 +41,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/slack", handler)
+	http.HandleFunc("/yi", yiHandler)
 	http.ListenAndServe(":8080", nil)
 }

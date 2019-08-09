@@ -1,7 +1,7 @@
-# slackyi
+# Slack-Hooks
 
-Slackyi is a microservice that responds to a Slack slash command with
-information about whether or not it is currently yi.
+Slack-Hooks is a microservice that that provides functionality used by the WUVT
+team on Slack.
 
 ## License
 Copyright (c) 2019 mutantmonkey

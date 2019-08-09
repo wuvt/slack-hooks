@@ -1,7 +1,7 @@
 FROM golang:alpine3.8 AS build
 
-COPY . /go/src/github.com/wuvt/slackyi
-WORKDIR /go/src/github.com/wuvt/slackyi
+COPY . /go/src/github.com/wuvt/slack-hooks
+WORKDIR /go/src/github.com/wuvt/slack-hooks
 
 RUN set -ex \
         && apk add --no-cache --virtual .build-deps git \
@@ -10,8 +10,8 @@ RUN set -ex \
 
 FROM alpine:3.8
 
-COPY --from=build /go/bin/slackyi /usr/local/bin/slackyi
+COPY --from=build /go/bin/slack-hooks /usr/local/bin/slack-hooks
 
 EXPOSE 8080
 USER nobody
-ENTRYPOINT ["/usr/local/bin/slackyi"]
+ENTRYPOINT ["/usr/local/bin/slack-hooks"]
