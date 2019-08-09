@@ -10,6 +10,8 @@ RUN set -ex \
 
 FROM alpine:3.8
 
+RUN apk add --no-cache ca-certificates
+
 COPY --from=build /go/bin/slack-hooks /usr/local/bin/slack-hooks
 
 EXPOSE 8080
