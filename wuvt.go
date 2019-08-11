@@ -97,6 +97,7 @@ func wuvtHandler(w http.ResponseWriter, r *http.Request) {
 	)
 
 	message.Msg.ResponseType = "in_channel"
+	message.Msg.Text = fmt.Sprintf("*%s - %s*\nDJ: %s", track.Artist, track.Title, djLink)
 
 	output, err := json.Marshal(message)
 	if err != nil {
