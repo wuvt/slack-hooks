@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/nlopes/slack"
 )
 
 func isItYi() string {
@@ -23,7 +25,7 @@ func isItYi() string {
 }
 
 func yiHandler(w http.ResponseWriter, r *http.Request) {
-	output, err := json.Marshal(SlackWebhookResponse{
+	output, err := json.Marshal(slack.Msg{
 		ResponseType: "in_channel",
 		Text:         isItYi(),
 	})
